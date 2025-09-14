@@ -1,0 +1,154 @@
+body {
+  background:black;
+  color:white;
+  font-family:Arial,sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.hidden { display:none; }
+
+/* Wallet top-left */
+.top-left {
+  position:fixed;
+  top:12px;
+  left:12px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  z-index:1001;
+}
+.wallet-btn {
+  background:white;
+  color:black;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.wallet-message { font-size:13px; }
+
+/* Game container */
+.game-container {
+  text-align:center;
+  max-width:720px;
+  background:rgba(11,15,31,0.9);
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 0 40px rgba(255,255,255,0.08);
+}
+
+/* Title */
+.logo { height:40px; }
+.game-title {
+  font-size:28px;
+  font-weight:bold;
+  color:white;
+  margin:10px 0;
+}
+
+/* Start menu */
+.start-btn {
+  background:white;
+  color:black;
+  padding:12px 26px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.start-btn:disabled { opacity:0.5; cursor:not-allowed; }
+.payment-status { font-size:13px; margin-top:8px; }
+
+/* Score & canvas */
+.score {
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+#gameCanvas {
+  border:2px solid white;
+  background:#1a1f2e;
+  border-radius:8px;
+  width:100%;
+  max-width:500px;
+  height:auto;
+}
+
+/* Controls */
+.controls {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px; /* more vertical spacing */
+}
+.control-row {
+  display: flex;
+  gap: 28px; /* more horizontal spacing */
+  justify-content: center;
+}
+.control-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 22px;        /* bigger padding */
+  font-size: 34px;      /* larger arrow icon */
+  border-radius: 14px;
+  width: 90px;          /* bigger width */
+  height: 90px;         /* bigger height */
+  cursor: pointer;
+}
+.control-btn:active { transform: scale(0.93); }
+
+/* Game over */
+.game-over {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(11,15,31,0.98);
+  padding:26px;
+  border-radius:12px;
+  border:2px solid white;
+  color:white;
+}
+.game-over button {
+  background:white;
+  color:black;
+  padding:10px 18px;
+  border-radius:8px;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* Instructions */
+.instructions {
+  margin-top:12px;
+  font-size:14px;
+  color:white;
+}
+
+/* Disclaimer */
+.disclaimer {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #ccc;
+  font-style: italic;
+}
+
+/* Footer credit */
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #aaa;
+}
+.footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
