@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snake Game — Onchain Start</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Ethers.js + WalletConnect -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+</head>
+<body>
+  <!-- Wallet connect top-left -->
+  <div class="top-left">
+    <button id="connectWalletBtn" class="wallet-btn">Connect Wallet</button>
+    <div id="walletMessage" class="wallet-message">Not connected</div>
+  </div>
+
+  <!-- Game container -->
+  <div class="game-container">
+    <div class="title-container">
+      <img src="logo.png" alt="Logo" class="logo">
+      <div class="game-title">SNAKE GAME</div>
+    </div>
+
+    <!-- Start -->
+    <div id="startMenu" class="start-menu">
+      <button id="startBtn" class="start-btn" disabled>Start Game</button>
+      <div id="paymentStatus" class="payment-status">Connect your wallet to start</div>
+    </div>
+
+    <!-- Game -->
+    <div id="gameSection" class="game-section hidden">
+      <div class="score">Score: <span id="score">0</span></div>
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+      <!-- Arrow controls -->
+      <div class="controls">
+        <div class="control-row">
+          <button class="control-btn" onclick="setDirection('up')">⬆️</button>
+        </div>
+        <div class="control-row">
+          <button class="control-btn" onclick="setDirection('left')">⬅️</button>
+          <button class="control-btn" onclick="setDirection('down')">⬇️</button>
+          <button class="control-btn" onclick="setDirection('right')">➡️</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game over -->
+    <div class="game-over hidden" id="gameOver">
+      <h2>Game Over!</h2>
+      <p>Final Score: <span id="finalScore">0</span></p>
+      <button onclick="retryGame()" id="retryBtn">Play Again</button>
+    </div>
+
+    <div class="instructions">
+      <p>Desktop: Use arrow keys | Mobile: Use buttons below</p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <p>This game is provided for entertainment purposes only. No rewards, tokens, or incentives are distributed for playing.</p>
+    </div>
+
+    <!-- Footer credit with link -->
+    <footer class="footer">
+      <p>Made by <a href="https://x.com/play_crypt" target="_blank">@play_crypt</a></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
